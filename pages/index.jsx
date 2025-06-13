@@ -3,6 +3,7 @@ import Image from "next/image";
 import { Geist, Geist_Mono } from "next/font/google";
 import styles from "@/styles/Home.module.css";
 import { useState } from "react";
+import axios from "axios";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -15,6 +16,17 @@ const geistMono = Geist_Mono({
 
 export default function Home()
 {
+  useEffect(async() => {
+    const ax=await axios.post("http://localhost:3001/createdata",
+      {
+    "name":"Faiba",
+    "city":"Kochi",
+    "age":"19"
+     }
+    )
+    console.log("Responce from server",ax);
+
+},[]);
   const [name,setName]=useState("")
   function handlePass(event)
   {
