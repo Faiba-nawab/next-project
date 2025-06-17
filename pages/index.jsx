@@ -18,7 +18,7 @@ const geistMono = Geist_Mono({
 export default function Home()
 {
   useEffect(async() => {
-    const ax=await axios.post("http://localhost:3001/createdata",
+    const ax=await axios.post("http://192.168.77.13:3000/createdata",
       {
     "name":"Faiba",
     "city":"Kochi",
